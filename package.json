@@ -1,0 +1,13 @@
+{
+  "name": "chatblocks",
+  "version": "1.0.0",
+  "description": "Declarative chatbots for Messenger",
+  "main": "index.js",
+  "author": "Szymon Korytnicki",
+  "license": "MIT",
+  "dependencies": {
+    "object.pick": "^1.3.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
