@@ -2,7 +2,7 @@ const elementTypes = require('./elementTypes');
 const isQuickReply = (c) => c.type === elementTypes.QUICK_REPLY; // todo inconsistent
 const isNotQuickReply = (c) => {
     if (typeof c !== 'object') {
-        return false;
+        return true;
     }
     return c.type !== elementTypes.QUICK_REPLY
 };
