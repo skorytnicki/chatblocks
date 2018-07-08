@@ -93,19 +93,19 @@ const Chatblocks = require("chatblocks");
 const {Component, Block, Text, ButtonTemplate, Button} = Chatblocks;
 
 // usually you want to keep one block per file
-class FineBlock extends Component { 
+class FineBlock extends Component {
     async render() {
-        return <Text>{this.props.emoji}</Text>
+        return <Text>Test {this.props.emoji}</Text>
     }
 }
 
 class MainComponent extends Component {
-    async render(event) { 
-        // event is available in main block only. 
-        // It can be passed down with props 
+    async render(event) {
+        // event is available in main block only.
+        // It can be passed down with props
         if (event.postback && event.postback.payload === "fine") {
             // you can transform event here, or in your webhook
-            return <FineBlock emoji={🎉}/> 
+            return <FineBlock emoji="🎉"/>
             // use React-style props to share data
         }
         return <Block>
@@ -118,8 +118,6 @@ class MainComponent extends Component {
     }
     // Note that it's pure JavaScript. You can perform any operation here (database, whatever)
 }
-
-module.exports = MainComponent;
 ```
 
 ## Compilation
