@@ -1,6 +1,6 @@
 {
   "name": "chatblocks",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Declarative chatbots for Messenger",
   "main": "index.js",
   "author": "Szymon Korytnicki",
