@@ -12,7 +12,8 @@ class Bot {
     }
 
     toAPICalls(senderId, reply) {
-        return flatten(reply).filter(component => isAPICall(component))
+        return flatten(reply)
+            .filter(component => isAPICall(component))
             .map((component) => {
                 const params = pick(component, ["message", "sender_action"]);
                 return createAPICall(params, this.pageAccessToken, this.facebookAPIVersion, senderId);

@@ -2,22 +2,28 @@ const createAPIElement = require("../createAPIElement");
 const elementTools = require("../elementTools");
 const {isQuickReply, isNotQuickReply} = elementTools;
 
-function GenericTemplate(props, ...children) {
-    const elements = children.filter(isNotQuickReply);
+// todo. Currently I assume other elements don't have type prop
+const isNotButton = (obj) => !obj.type;
+const isButton = (obj) => obj.type;
+
+function ListTemplate(props, ...children) {
+    const quickReply = children.find(isQuickReply);
+    const buttons = children.filter(isNotQuickReply).filter(isButton);
+    const elements = children.filter(isNotButton).filter(isNotQuickReply); // todo ugly checks!
     let data = {
         message: {
             attachment: {
                 type: "template",
                 payload: {
-                    template_type: "generic",
+                    template_type: "list",
+                    top_element_style: props && props.topElementStyle ? props.topElementStyle : "compact",
                     elements: elements,
-                    image_aspect_ratio: props && props.imageAspectRatio === "square" ? "square" : "horizontal",
+                    buttons: buttons,
                     sharable: props ? !!props.sharable : false
                 }
             }
         }
     };
-    const quickReply = children.find(isQuickReply);
 
     if (quickReply) {
         data.message.quick_replies = quickReply.quickReplies;
@@ -44,10 +50,6 @@ function Image(props, ...children) {
     }
 }
 
-// todo. Currently I assume other elements don't have type prop
-const isNotButton = (obj) => !obj.type;
-const isButton = (obj) => obj.type;
-
 function Element(props, ...children) {
     let el = children.filter(isNotButton).reduce((previousValue, currentValue) => {
         return {
@@ -70,5 +72,5 @@ function Element(props, ...children) {
 }
 
 module.exports = {
-    GenericTemplate, Element, Title, Subtitle, Image
+    ListTemplate, Element, Title, Subtitle, Image
 };

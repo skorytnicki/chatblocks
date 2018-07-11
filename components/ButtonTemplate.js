@@ -12,7 +12,7 @@ function ButtonTemplate(props, ...children) {
                     template_type: "button",
                     text: props.text,
                     buttons: buttons,
-                    sharable: !!props.sharable
+                    sharable: props ? !!props.sharable : false
                 }
             }
         }

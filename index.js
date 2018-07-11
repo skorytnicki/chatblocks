@@ -9,6 +9,7 @@ const QuickReply = require("./components/QuickReply");
 const QuickReplies = require("./components/QuickReplies");
 const GenericTemplate = require("./components/GenericTemplate");
 const MediaTemplate = require("./components/MediaTemplate");
+const ListTemplate = require("./components/ListTemplate");
 
 const MarkSeen = require("./components/MarkSeen");
 const TypingOn = require("./components/TypingOn");
@@ -27,6 +28,7 @@ module.exports = {
     QuickReplies,
     GenericTemplate,
     MediaTemplate,
+    ListTemplate,
     MarkSeen,
     TypingOn,
     TypingOff,

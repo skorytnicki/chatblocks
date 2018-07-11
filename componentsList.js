@@ -9,8 +9,9 @@ const MediaTemplate = require("./components/MediaTemplate");
 const MarkSeen = require("./components/MarkSeen");
 const TypingOn = require("./components/TypingOn");
 const TypingOff = require("./components/TypingOff");
+const ListTemplate = require("./components/ListTemplate");
 
 const components = [Text, Block, ButtonTemplate, Button, QuickReply, QuickReplies, MediaTemplate, MarkSeen, TypingOn, TypingOff];
-let componentNames = [...components.map(el => el.name), ...Object.keys(GenericTemplate)];
+let componentNames = [...components.map(el => el.name), ...Object.keys(GenericTemplate), ...Object.keys(ListTemplate)];
 
 module.exports = componentNames;
