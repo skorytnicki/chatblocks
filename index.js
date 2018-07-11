@@ -10,6 +10,25 @@ const QuickReplies = require("./components/QuickReplies");
 const GenericTemplate = require("./components/GenericTemplate");
 const MediaTemplate = require("./components/MediaTemplate");
 
+const MarkSeen = require("./components/MarkSeen");
+const TypingOn = require("./components/TypingOn");
+const TypingOff = require("./components/TypingOff");
+
 const createElement = require("./createElement");
 
-module.exports = {Bot, Component, Block, Text, ButtonTemplate, Button, QuickReply, QuickReplies, GenericTemplate, MediaTemplate, createElement};
+module.exports = {
+    Bot,
+    Component,
+    Block,
+    Text,
+    ButtonTemplate,
+    Button,
+    QuickReply,
+    QuickReplies,
+    GenericTemplate,
+    MediaTemplate,
+    MarkSeen,
+    TypingOn,
+    TypingOff,
+    createElement
+};

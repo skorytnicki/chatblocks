@@ -1,5 +1,6 @@
 const createAPICall = require('./createAPICall');
 const elementTools = require("./elementTools");
+const pick = require("object.pick");
 const {isAPICall} = elementTools;
 
 class Bot {
@@ -11,12 +12,11 @@ class Bot {
     }
 
     toAPICalls(senderId, reply) {
-        return flatten(reply).map((component) => {
-            if (!isAPICall(component)) {
-                return null;
-            }
-            return createAPICall({message: component.message}, this.pageAccessToken, this.facebookAPIVersion, senderId);
-        }).filter(Boolean);
+        return flatten(reply).filter(component => isAPICall(component))
+            .map((component) => {
+                const params = pick(component, ["message", "sender_action"]);
+                return createAPICall(params, this.pageAccessToken, this.facebookAPIVersion, senderId);
+            });
     }
 
     async send(senderId, reply) {
