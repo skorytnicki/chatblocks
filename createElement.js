@@ -1,4 +1,4 @@
-const basicComponentsList = require('./components/index');
+const basicComponentsList = require('./componentsList');
 const Block = require('./components/Block');
 
 async function createElement(component, props, ...children) {

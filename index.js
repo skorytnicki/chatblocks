@@ -8,7 +8,8 @@ const Button = require("./components/Button");
 const QuickReply = require("./components/QuickReply");
 const QuickReplies = require("./components/QuickReplies");
 const GenericTemplate = require("./components/GenericTemplate");
+const MediaTemplate = require("./components/MediaTemplate");
 
 const createElement = require("./createElement");
 
-module.exports = {Bot, Component, Block, Text, ButtonTemplate, Button, QuickReply, QuickReplies, GenericTemplate, createElement};
+module.exports = {Bot, Component, Block, Text, ButtonTemplate, Button, QuickReply, QuickReplies, GenericTemplate, MediaTemplate, createElement};
