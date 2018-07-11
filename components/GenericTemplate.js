@@ -44,7 +44,7 @@ function Image(props, ...children) {
     }
 }
 
-// todo
+// todo. Currently I assume other elements don't have type prop
 const isNotButton = (obj) => !obj.type;
 const isButton = (obj) => obj.type;
 
