@@ -11,7 +11,8 @@ function ButtonTemplate(props, ...children) {
                 payload: {
                     template_type: "button",
                     text: props.text,
-                    buttons: buttons
+                    buttons: buttons,
+                    sharable: !!props.sharable
                 }
             }
         }
