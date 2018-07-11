@@ -11,6 +11,8 @@ function GenericTemplate(props, ...children) {
                 payload: {
                     template_type: "generic",
                     elements: elements,
+                    image_aspect_ratio: props.imageAspectRatio === "square" ? "square" : "horizontal",
+                    sharable: !!props.sharable
                 }
             }
         }
