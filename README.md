@@ -166,7 +166,11 @@ After compilation, you can deploy your bot to Heroku for small price.
  - ButtonTemplate
  - QuickReplies, QuickReply
  - Button
- - more to come
+ - MediaTemplate
+ - ListTemplate
+ - MarkSeen
+ - TypingOn
+ - TypingOff
  
  
 ### How to connect multiple fanpages to one webhook?
@@ -197,12 +201,13 @@ decide yourself about your infrastructure etc.
  
 # Todos
   
+  - ~~Improve Button~~
+  - ~~Improve Generic template~~
+  - ~~Add List block~~
+  - ~~Add Media block (image)~~
+  - ~~Add sender actions~~
   - Improve docs. Add description of each chatblock.
-  - Improve Button
-  - Improve Generic template
-  - Add List block
   - Add Delay block
-  - Add Media block (image)
   - Add Route block (not sure about that)
   - Harmonize Element API
   - Write tests
