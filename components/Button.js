@@ -49,12 +49,12 @@ const props = [
         types: [types.GAMEPLAY]
     },
     {
-        chatblocksName: "gameMetadata",
+        chatblocksName: "messengerExtensions",
         messengerName: "messenger_extensions",
         types: [types.URL]
     },
     {
-        chatblocksName: "gameMetadata",
+        chatblocksName: "webviewHeightRatio",
         messengerName: "webview_height_ratio",
         types: [types.URL]
     },
