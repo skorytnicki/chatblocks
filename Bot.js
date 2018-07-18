@@ -1,31 +1,22 @@
-const createAPICall = require('./createAPICall');
 const elementTools = require("./elementTools");
-const pick = require("object.pick");
 const {isAPICall} = elementTools;
+const defaultMiddleware = require('./defaultMiddleware');
 
 class Bot {
-    constructor({component, pageAccessToken, facebookAPIVersion}) {
+    constructor({component, pageAccessToken, facebookAPIVersion, middleware}) {
         this.component = new component();
         this.pageAccessToken = pageAccessToken;
         this.facebookAPIVersion = facebookAPIVersion;
-
+        this.middleware = middleware ? middleware : defaultMiddleware;
     }
 
-    toAPICalls(senderId, reply) {
-        return flatten(reply)
-            .filter(component => isAPICall(component))
-            .map((component) => {
-                const params = pick(component, ["message", "sender_action"]);
-                return createAPICall(params, this.pageAccessToken, this.facebookAPIVersion, senderId);
-            });
+    getMessages(reply) {
+        return flatten(reply).filter(component => isAPICall(component))
     }
 
     async send(senderId, reply) {
-        let funcs = this.toAPICalls(senderId, reply);
-
-        for (const func of funcs) {
-            await func();
-        }
+        let messages = this.getMessages(reply);
+        this.middleware(messages, this.pageAccessToken, this.facebookAPIVersion, senderId)
     }
 
     async trigger({senderId, event}) {
