@@ -172,6 +172,8 @@ After compilation, you can deploy your bot to Heroku for small price.
  - TypingOn
  - TypingOff
  
+Description available in github Wiki.
+ 
  
 ### How to connect multiple fanpages to one webhook?
  
@@ -200,21 +202,12 @@ decide yourself about your infrastructure etc.
 - You want to optimize developer's work
  
 # Todos
-  
-  - ~~Improve Button~~
-  - ~~Improve Generic template~~
-  - ~~Add List block~~
-  - ~~Add Media block (image)~~
-  - ~~Add sender actions~~
-  - Improve docs. Add description of each chatblock.
-  - Add Delay block
-  - Add Route block (not sure about that)
-  - Harmonize Element API
-  - Write tests
-  - Rewrite to TypeScript
-  - Create better watch and build tools
-  - Release utils library for common tasks related to bots (Get Started, Persistent Menu, whitelisting...)
-  - Improve social media of the project
+
+Take a look at Issues and Projects of github repo.
+ 
+# Sample bot
+
+Take a look at sample project with configured environment: https://github.com/skorytnicki/chatblocks-sample-project
   
 # Author
 
