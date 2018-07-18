@@ -8,7 +8,7 @@ async function createElement(component, props, ...children) {
 
     const Component = new component(props);
     const result = await Component.render();
-    return await createElement(Block, {}, [result]);
+    return await createElement(Block, {}, [result]); // todo inspect this; harmonize this API
 }
 
 module.exports = createElement;

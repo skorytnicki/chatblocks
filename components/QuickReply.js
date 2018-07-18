@@ -6,11 +6,18 @@ function QuickReply(props, ...children) {
             content_type: "location"
         }
     }
-    return {
+
+    let payload = {
         content_type: "text",
         title: children[0],
-        payload: props.payload // todo
+        payload: props.payload
+    };
+
+    if (props.imageUrl) {
+        payload.image_url = props.image_url
     }
+
+    return payload
 }
 
 module.exports = QuickReply;
