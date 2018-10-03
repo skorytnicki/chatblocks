@@ -1,0 +1,46 @@
+{
+  "name": "chatblocks-cli",
+  "bin": {
+    "chatblocks" : "./index.js"
+  },
+  "version": "1.0.0",
+  "description": "Chatbot generator as CLI for chatblocks framework",
+  "main": "build/index.js",
+  "author": "Szymon Korytnicki",
+  "license": "MIT",
+  "homepage": "http://chatblocks.net",
+  "dependencies": {
+    "colors": "*",
+    "commander": "*"
+  },
+  "types": "./build/index.d.ts",
+  "keywords": [
+    "bot",
+    "chat",
+    "chatbot",
+    "chatbot facebook",
+    "chatbot framework",
+    "chatbot messenger",
+    "declarative",
+    "declarative ui",
+    "facebook",
+    "facebook bot",
+    "facebook messenger",
+    "facebook messenger bot",
+    "facebook messenger platform",
+    "javascript",
+    "jsx",
+    "messenger api",
+    "messenger platform",
+    "messenger",
+    "messenger api",
+    "messenger bot",
+    "messenger bot-boilerplate",
+    "messenger chatbot",
+    "messenger chatbots",
+    "messenger platform",
+    "react",
+    "reactjs",
+    "ui"
+  ]
+}

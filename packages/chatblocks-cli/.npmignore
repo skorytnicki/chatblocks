@@ -1,6 +1,6 @@
 node_modules
 .DS_Store
 .idea
-build
-*.env
-__tests
+src
+tslint.json
+tsconfig.json
