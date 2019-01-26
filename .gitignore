@@ -4,3 +4,4 @@ node_modules
 build
 *.env
 __tests
+src/*.js

@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.4.0"
+    "lerna": "^3.4.0",
+    "tslint-config-prettier": "^1.15.0"
   },
   "repository": {
     "type": "git",

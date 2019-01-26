@@ -10,9 +10,6 @@
     "build": "tsc --sourceMap",
     "watch": "tsc --watch --sourceMap"
   },
-  "devDependencies": {
-    "tslint-config-prettier": "^1.15.0"
-  },
   "types": "./build/index.d.ts",
   "keywords": [
     "bot",

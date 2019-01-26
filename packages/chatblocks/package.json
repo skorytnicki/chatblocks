@@ -14,9 +14,6 @@
     "request": "^2.87.0",
     "request-promise": "^4.2.2"
   },
-  "devDependencies": {
-    "tslint-config-prettier": "^1.15.0"
-  },
   "types": "./build/index.d.ts",
   "keywords": [
     "bot",
