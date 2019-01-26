@@ -22,7 +22,7 @@ export class Bot {
         });
     }
 
-    async trigger({senderId, event}) {
+    async render({senderId, event}) {
         const reply = await this.component(event);
         this.send(senderId, reply);
     }

@@ -1,3 +1,10 @@
+export interface ButtonTemplateProps {
+    text: string;
+    children?: any;
+    sharable?: boolean,
+    quickReplies?: MessengerQuickReply[]
+}
+
 export function ButtonTemplate({children, text, sharable, quickReplies}: ButtonTemplateProps) {
     let data = <MessengerData>{
         message: {

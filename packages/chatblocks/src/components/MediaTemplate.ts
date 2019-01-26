@@ -1,4 +1,17 @@
-export function MediaTemplate({children, attachmentId, url, mediaType, quickReplies}) {
+export enum MediaTypeEnum {
+    video = "video",
+    image = "image"
+}
+
+export interface MediaTemplateProps {
+    children?: any
+    attachmentId?: string
+    url?: string
+    mediaType: MediaTypeEnum
+    quickReplies: MessengerQuickReply[]
+}
+
+export function MediaTemplate({children, attachmentId, url, mediaType, quickReplies}: MediaTemplateProps) {
     let element = <MessengerElement>{
         media_type: mediaType
     };

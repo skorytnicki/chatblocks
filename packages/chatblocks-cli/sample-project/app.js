@@ -41,7 +41,7 @@ app.post("/webhook", (req, res) => {
                 // Receive event
                 // Transform each event as you wish
                 // Send it to the bot
-                Bot.trigger({
+                Bot.render({
                     senderId: event.sender.id,
                     event: event
                     // you can pass any data to main component here

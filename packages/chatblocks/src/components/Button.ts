@@ -64,12 +64,27 @@ const props = [
     },
 ];
 
-export function Button({type, children, ...props}) {
+export interface ButtonProps {
+    type?: string,
+    children?: any
+    url?: string,
+    payload?: string,
+    fallbackURL?: string,
+    webviewHeightRatio?: string,
+    messengerExtensions?: boolean,
+    gameMetadata?: string,
+    priceList?: any,
+    shareContents?: any
+}
+
+export function Button({type, children, ...props}: ButtonProps) {
     const buttonType = type ? type : guessType(props);
-    props.title = children.length > 0 ? children[0] : "";
     return {
         type: buttonType,
-        ...getParams(buttonType, props)
+        ...getParams(buttonType, {
+            ...props,
+            title: children
+        })
     };
 }
 

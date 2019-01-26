@@ -1,4 +1,16 @@
-function GenericTemplateElement({children, sharable, imageAspectRatio, quickReplies}) {
+export enum imageAspectRatio {
+    square = "square",
+    horizontal = "horizontal"
+}
+
+export interface GenericTemplateProps {
+    children?: any,
+    sharable?: boolean,
+    imageAspectRatio?: imageAspectRatio,
+    quickReplies?: MessengerQuickReply[]
+}
+
+function GenericTemplateElement({children, sharable, imageAspectRatio, quickReplies}: GenericTemplateProps) {
     let data = <MessengerData>{
         message: {
             attachment: {
@@ -20,19 +32,31 @@ function GenericTemplateElement({children, sharable, imageAspectRatio, quickRepl
     return data;
 }
 
-function Title({children}) {
+export interface TitleProps {
+    children?: any
+}
+
+function Title({children}: TitleProps) {
     return {
         title: children[0]
     }
 }
 
-function Subtitle({children}) {
+export interface SubtitleProps {
+    children?: any
+}
+
+function Subtitle({children}: SubtitleProps) {
     return {
         subtitle: children[0]
     }
 }
 
-function Image({url}) {
+export interface ImageProps {
+    url: string
+}
+
+function Image({url}: ImageProps) {
     return {
         image_url: url
     }
@@ -42,7 +66,12 @@ function Image({url}) {
 const isNotButton = (obj) => !obj.type;
 const isButton = (obj) => obj.type;
 
-function Element({children, defaultAction}) {
+export interface ElementProps {
+    children?: any
+    defaultAction: string
+}
+
+function Element({children, defaultAction}: ElementProps) {
     let el = children.filter(isNotButton).reduce((previousValue, currentValue) => {
         return {
             ...previousValue,

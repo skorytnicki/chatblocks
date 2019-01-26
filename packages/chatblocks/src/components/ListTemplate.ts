@@ -2,9 +2,16 @@
 const isNotButton = (obj) => !obj.type;
 const isButton = (obj) => obj.type;
 
-function ListTemplateComponent({children, sharable, topElementStyle, quickReplies}) {
+export interface ListTemplateProps {
+    children?: any
+    sharable?: boolean,
+    topElementStyle?: string
+    quickReplies?: MessengerQuickReply[]
+}
+
+function ListTemplateComponent({children, sharable, topElementStyle, quickReplies}: ListTemplateProps) {
     const buttons = children.filter(isButton);
-    const elements = children.filter(isNotButton); // todo ugly checks!
+    const elements = children.filter(isNotButton); // todo-buttons
     let data = <MessengerData>{
         message: {
             attachment: {
@@ -14,7 +21,7 @@ function ListTemplateComponent({children, sharable, topElementStyle, quickReplie
                     top_element_style: topElementStyle || "compact",
                     elements: elements,
                     buttons: buttons,
-                    sharable: !!sharable
+                    sharable: Boolean(sharable)
                 }
             }
         }
@@ -27,25 +34,42 @@ function ListTemplateComponent({children, sharable, topElementStyle, quickReplie
     return data
 }
 
-function Title({children}) {
+export interface TitleProps {
+    children?: any
+}
+
+function Title({children}: TitleProps) {
     return {
         title: children[0]
     }
 }
 
-function Subtitle({children}) {
+export interface SubtitleProps {
+    children?: any
+}
+
+function Subtitle({children}: SubtitleProps) {
     return {
         subtitle: children[0]
     }
 }
 
-function Image({url}) {
+export interface ImageProps {
+    url: string
+}
+
+function Image({url}: ImageProps) {
     return {
         image_url: url
     }
 }
 
-function Element({children, defaultAction}) {
+export interface ElementProps {
+    children?: any
+    defaultAction: string
+}
+
+function Element({children, defaultAction}: ElementProps) {
     let el = children.filter(isNotButton).reduce((previousValue, currentValue) => {
         return {
             ...previousValue,
@@ -63,7 +87,7 @@ function Element({children, defaultAction}) {
         el.buttons = buttons;
     }
 
-    return <MessengerElement>el;
+    return el;
 }
 
 export const ListTemplate = {

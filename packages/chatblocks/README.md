@@ -42,7 +42,7 @@ app.post("/webhook", (req, res) => {
                 // Receive event
                 // Transform each event as you wish
                 // Send it to the bot
-                Bot.trigger({
+                Bot.render({
                     senderId: event.sender.id,
                     event: event
                 });
@@ -157,7 +157,7 @@ After compilation, you can deploy your bot to Heroku for small price.
  - Text
  - GenericTemplate
  - ButtonTemplate
- - QuickReplies, QuickReply
+ - QuickReply
  - Button
  - MediaTemplate
  - ListTemplate

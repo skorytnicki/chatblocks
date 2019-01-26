@@ -1,4 +1,11 @@
-export function QuickReply({children, isLocation, imageUrl, payload}) {
+export interface QuickReplyProps {
+    children?: any
+    isLocation?: boolean
+    imageUrl?: string,
+    payload?: string
+}
+
+export function QuickReply({children, isLocation, imageUrl, payload}: QuickReplyProps) {
     if (isLocation) {
         return <MessengerQuickReply>{
             content_type: "location"
