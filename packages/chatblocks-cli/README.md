@@ -17,5 +17,5 @@ Run command
 
 ## What's not?
 
-- nodemon and ngrok
+- nodemon (to re-run your node.js project on each change; very helpful!) and ngrok (or localtunnel.me; to tunnel messages from Facebook webhook to your local machine)
 - Messenger App settings (page access token and verify token)

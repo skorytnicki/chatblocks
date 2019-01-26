@@ -71,18 +71,16 @@ and create simple chatblock:
 
 ```javascript
 const Chatblocks = require("chatblocks");
-const {Component, Block, Text, ButtonTemplate, Button} = Chatblocks;
+const {Block, Text, ButtonTemplate, Button} = Chatblocks;
 
-class MainComponent extends Component {
-    async render(event) {
-        return <Block>
-            <Text>Hello!</Text>
-            <ButtonTemplate text="How are you?">
-                <Button payload="fine">Fine</Button>
-                <Button url="http://chatblocks.net">chatblocks.net</Button>
-            </ButtonTemplate>
-        </Block>
-    }
+async function MainComponent(event) {
+    return <Block>
+        <Text>Hello!</Text>
+        <ButtonTemplate text="How are you?">
+            <Button payload="fine">Fine</Button>
+            <Button url="http://chatblocks.net">chatblocks.net</Button>
+        </ButtonTemplate>
+    </Block>
 }
 
 module.exports = MainComponent;
@@ -92,34 +90,30 @@ This was easy, huh? Let's create another block to react to button click:
 
 ```javascript
 const Chatblocks = require("chatblocks");
-const {Component, Block, Text, ButtonTemplate, Button} = Chatblocks;
+const {Block, Text, ButtonTemplate, Button} = Chatblocks;
 
 // usually you want to keep one block per file
-class FineBlock extends Component {
-    async render() {
-        return <Text>Test {this.props.emoji}</Text>
-    }
+async function FineBlock(props) {
+    return <Text>Test {props.emoji}</Text>
 }
 
-class MainComponent extends Component {
-    async render(event) {
-        // event is available in main block only.
-        // It can be passed down with props
-        if (event.postback && event.postback.payload === "fine") {
-            // you can transform event here, or in your webhook
-            return <FineBlock emoji="🎉"/>
-            // use React-style props to share data
-        }
-        return <Block>
-            <Text>Hello!</Text>
-            <ButtonTemplate text="How are you?">
-                <Button payload="fine">Fine</Button>
-                <Button url="http://chatblocks.net">chatblocks.net</Button>
-            </ButtonTemplate>
-        </Block>
+async function MainComponent(event) {
+    // event is available in main block only.
+    // It can be passed down with props
+    if (event.postback && event.postback.payload === "fine") {
+        // you can transform event here, or in your webhook
+        return <FineBlock emoji="🎉"/>
+        // use React-style props to share data
     }
-    // Note that it's pure JavaScript. You can perform any operation here (database, whatever)
+    return <Block>
+        <Text>Hello!</Text>
+        <ButtonTemplate text="How are you?">
+            <Button payload="fine">Fine</Button>
+            <Button url="http://chatblocks.net">chatblocks.net</Button>
+        </ButtonTemplate>
+    </Block>
 }
+// Note that it's pure JavaScript. You can perform any operation here (database, whatever)
 ```
 
 ## Compilation
@@ -127,17 +121,16 @@ class MainComponent extends Component {
 Chatblocks' JSX has to be compiled to pure JavaScript, which looks like:
 
 ```javascript
-class TestBlock extends Component {
-    async render() {
-        return await createElement(Block, null, 
+async function TextBlock() {
+    return await Chatblocks.createElement(Block, null, 
         [
-            await createElement(Text, null, "Hello")
-        ]);
-    }
+            await Chatblocks.createElement(Text, null, "Hello")
+        ]
+    );
 }
 ```
 
-createElement takes class name, props and ...children parameters. Then, chatblocks creates requests to Facebook, to display messages in conversation.
+createElement takes function name, props and spread children parameters. Then, chatblocks creates requests to Facebook, to display messages in conversation.
 
 Chatblocks is compiled using transform-react-jsx babel plugin, with custom pragma. Configuration of your build and watch system is up to you. Your .babelrc file can look like: 
 
@@ -207,7 +200,7 @@ Take a look at Issues and Projects of github repo.
  
 # Sample bot
 
-Take a look at sample project with configured environment: https://github.com/skorytnicki/chatblocks-sample-project
+Generate sample chatbot with `chatblocks-cli` (`npm i -g chatblocks-cli`)
   
 # Author
 
