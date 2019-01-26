@@ -1,14 +1,10 @@
-import {createAPIElement} from "../createAPIElement";
-import {isQuickReply, isNotQuickReply} from "../elementTools";
-
-// todo. Currently I assume other elements don't have type prop
+// todo-buttons
 const isNotButton = (obj) => !obj.type;
 const isButton = (obj) => obj.type;
 
-function ListTemplateComponent({children, sharable, topElementStyle}) {
-    const quickReply = children.find(isQuickReply);
-    const buttons = children.filter(isNotQuickReply).filter(isButton);
-    const elements = children.filter(isNotButton).filter(isNotQuickReply); // todo ugly checks!
+function ListTemplateComponent({children, sharable, topElementStyle, quickReplies}) {
+    const buttons = children.filter(isButton);
+    const elements = children.filter(isNotButton); // todo ugly checks!
     let data = <MessengerData>{
         message: {
             attachment: {
@@ -24,11 +20,11 @@ function ListTemplateComponent({children, sharable, topElementStyle}) {
         }
     };
 
-    if (quickReply) {
-        data.message.quick_replies = quickReply.quickReplies;
+    if (quickReplies) {
+        data.message.quick_replies = quickReplies;
     }
 
-    return createAPIElement(data)
+    return data
 }
 
 function Title({children}) {

@@ -1,3 +1,3 @@
-export function Block({children}) {
+export function Block({children}: BlockProps) {
     return children;
 }

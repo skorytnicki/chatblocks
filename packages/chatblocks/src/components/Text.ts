@@ -1,19 +1,13 @@
-import {createAPIElement} from "../createAPIElement";
-import {isQuickReply, isNotQuickReply} from "../elementTools";
-
-export function Text({children}) {
-    const text = children.filter(isNotQuickReply);
-
+export function Text({children, quickReplies}: TextProps) {
     let data = <MessengerData>{
         message: {
-            text: text.join("")
+            text: children.join("")
         }
     };
-    const quickReply = children.find(isQuickReply);
 
-    if (quickReply) {
-        data.message.quick_replies = quickReply.quickReplies;
+    if (quickReplies) {
+        data.message.quick_replies = quickReplies;
     }
 
-    return createAPIElement(data)
+    return data;
 }

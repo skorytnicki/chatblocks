@@ -1,4 +1,3 @@
-import {isAPICall} from "./elementTools";
 import {defaultMiddleware} from "./defaultMiddleware";
 
 export class Bot {
@@ -14,16 +13,9 @@ export class Bot {
         this.middleware = middleware || defaultMiddleware;
     }
 
-    getMessages(reply) {
-        return flatten([reply])
-            .filter(component => isAPICall(component))
-            .map(({type, ...el}) => el)
-    }
-
     async send(senderId, reply) {
-        let messages = this.getMessages(reply);
         this.middleware({
-            messages: messages,
+            messages: flatten([reply]),
             pageAccessToken: this.pageAccessToken,
             facebookAPIVersion: this.facebookAPIVersion,
             senderId: senderId

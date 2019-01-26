@@ -1,4 +1,4 @@
-// this could be another package to remove most of all dependencies
+// todo-dependencies this could be another package to remove dependencies
 import {createAPICall} from "./createAPICall";
 
 export async function defaultMiddleware({messages, pageAccessToken, facebookAPIVersion, senderId}) {

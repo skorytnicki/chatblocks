@@ -1,8 +1,4 @@
-import {createAPIElement} from "../createAPIElement";
-import {isQuickReply, isNotQuickReply} from "../elementTools";
-
-export function ButtonTemplate({children, text, sharable}) {
-    const buttons = children.filter(isNotQuickReply);
+export function ButtonTemplate({children, text, sharable, quickReplies}: ButtonTemplateProps) {
     let data = <MessengerData>{
         message: {
             attachment: {
@@ -10,17 +6,16 @@ export function ButtonTemplate({children, text, sharable}) {
                 payload: {
                     template_type: "button",
                     text: text,
-                    buttons: buttons,
-                    sharable: !!sharable
+                    buttons: children,
+                    sharable: sharable
                 }
             }
         }
     };
-    const quickReply = children.find(isQuickReply);
 
-    if (quickReply) {
-        data.message.quick_replies = quickReply.quickReplies;
+    if (quickReplies) {
+        data.message.quick_replies = quickReplies;
     }
 
-    return createAPIElement(data);
+    return data;
 }

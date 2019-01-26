@@ -1,28 +1,23 @@
-import {createAPIElement} from "../createAPIElement";
-import {isQuickReply, isNotQuickReply} from "../elementTools";
-
-function GenericTemplateElement({children, sharable, imageAspectRatio}) {
-    const elements = children.filter(isNotQuickReply);
+function GenericTemplateElement({children, sharable, imageAspectRatio, quickReplies}) {
     let data = <MessengerData>{
         message: {
             attachment: {
                 type: "template",
                 payload: {
                     template_type: "generic",
-                    elements: elements,
+                    elements: children,
                     image_aspect_ratio: imageAspectRatio === "square" ? "square" : "horizontal",
                     sharable: !!sharable
                 }
             }
         }
     };
-    const quickReply = children.find(isQuickReply);
 
-    if (quickReply) {
-        data.message.quick_replies = quickReply.quickReplies;
+    if (quickReplies) {
+        data.message.quick_replies = quickReplies;
     }
 
-    return createAPIElement(data)
+    return data;
 }
 
 function Title({children}) {
@@ -43,7 +38,7 @@ function Image({url}) {
     }
 }
 
-// todo. Currently I assume other elements don't have type prop
+// todo-buttons
 const isNotButton = (obj) => !obj.type;
 const isButton = (obj) => obj.type;
 

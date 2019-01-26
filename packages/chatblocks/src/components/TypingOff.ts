@@ -1,7 +1,5 @@
-import {createAPIElement} from "../createAPIElement";
-
 export function TypingOff() {
-    return createAPIElement({
+    return {
         sender_action: "typing_off"
-    });
+    };
 }

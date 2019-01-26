@@ -1,7 +1,5 @@
-import {createAPIElement} from "../createAPIElement";
-
 export function TypingOn() {
-    return createAPIElement({
+    return {
         sender_action: "typing_on"
-    });
+    };
 }

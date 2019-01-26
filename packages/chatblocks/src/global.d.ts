@@ -55,12 +55,21 @@ declare type MessengerElement = {
     default_action: string;
 }
 
-declare type Component<T> = {
-    (args: T)
+declare interface BlockProps {
+    children: any[]
 }
 
-declare type ButtonTemplateProps = {
+// todo-props
+
+declare interface ButtonTemplateProps {
     text: string;
     children: any[];
-    sharable?: boolean
+    sharable?: boolean,
+    quickReplies?: MessengerQuickReply[]
 }
+
+declare interface TextProps {
+    children: any[],
+    quickReplies?: MessengerQuickReply[]
+}
+

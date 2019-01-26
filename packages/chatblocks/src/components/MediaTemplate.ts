@@ -1,8 +1,4 @@
-import {createAPIElement} from "../createAPIElement";
-import {isQuickReply, isNotQuickReply} from "../elementTools";
-
-export function MediaTemplate({children, attachmentId, url, mediaType}) {
-    const buttons = children.filter(isNotQuickReply);
+export function MediaTemplate({children, attachmentId, url, mediaType, quickReplies}) {
     let element = <MessengerElement>{
         media_type: mediaType
     };
@@ -15,8 +11,8 @@ export function MediaTemplate({children, attachmentId, url, mediaType}) {
         element.url = url;
     }
 
-    if (buttons.length === 1) {
-        element.buttons = buttons;
+    if (children.length === 1) {
+        element.buttons = children;
     }
 
     let data = <MessengerData>{
@@ -26,19 +22,16 @@ export function MediaTemplate({children, attachmentId, url, mediaType}) {
                 payload: {
                     template_type: "media",
                     elements: [
-                        {
-                            ...element
-                        }
+                        element
                     ]
                 }
             }
         }
     };
-    const quickReply = children.find(isQuickReply);
 
-    if (quickReply) {
-        data.message.quick_replies = quickReply.quickReplies;
+    if (quickReplies) {
+        data.message.quick_replies = quickReplies;
     }
 
-    return createAPIElement(data)
+    return data;
 }

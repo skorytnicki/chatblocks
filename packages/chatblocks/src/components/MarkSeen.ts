@@ -1,7 +1,5 @@
-import {createAPIElement} from "../createAPIElement";
-
 export function MarkSeen() {
-    return createAPIElement({
+    return {
         sender_action: "mark_seen"
-    });
+    };
 }

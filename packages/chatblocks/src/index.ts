@@ -5,7 +5,6 @@ export {Text} from "./components/Text";
 export {ButtonTemplate} from "./components/ButtonTemplate";
 export {Button} from "./components/Button";
 export {QuickReply} from "./components/QuickReply";
-export {QuickReplies} from "./components/QuickReplies";
 export {GenericTemplate} from "./components/GenericTemplate";
 export {MediaTemplate} from "./components/MediaTemplate";
 export {ListTemplate} from "./components/ListTemplate";
