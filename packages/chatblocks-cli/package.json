@@ -5,7 +5,7 @@
   },
   "version": "1.0.0",
   "description": "Chatbot generator as CLI for chatblocks framework",
-  "main": "build/index.js",
+  "main": "index.js",
   "author": "Szymon Korytnicki",
   "license": "MIT",
   "homepage": "http://chatblocks.net",
@@ -13,7 +13,6 @@
     "colors": "*",
     "commander": "*"
   },
-  "types": "./build/index.d.ts",
   "keywords": [
     "bot",
     "chat",
