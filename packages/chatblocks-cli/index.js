@@ -98,6 +98,26 @@ function createEnv() {
             console.log(err.toString().red);
             process.exit();
         }
+        createBabelrc();
+    });
+}
+
+// create babelrc file and populate it
+function createBabelrc() {
+    console.log("- Creating .babelrc file...".green);
+    fs.writeFile(`./${name}/.babelrc`,
+`{
+    "plugins": [
+        ["transform-object-rest-spread"],
+        ["transform-react-jsx", { "pragma": "await Chatblocks.createElement" }]
+    ]
+}`, (err) => {
+        if (err) {
+            console.log(`Error writing .babelrc file.`);
+            console.log("Details".underline);
+            console.log(err.toString().red);
+            process.exit();
+        }
         createPackageJSON();
     });
 }
