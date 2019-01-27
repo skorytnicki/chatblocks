@@ -83,7 +83,7 @@ export function Button({type, children, ...props}: ButtonProps) {
         type: buttonType,
         ...getParams(buttonType, {
             ...props,
-            title: children.join("")
+            title: children.length > 0 ? children[0] : ""
         })
     };
 }
