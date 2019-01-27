@@ -16,6 +16,7 @@ const samplePackageJSON = {
     "dependencies": {
         "body-parser": "*",
         "chatblocks": "*",
+        "chatblocks-router": "*",
         "dotenv": "^6.0.0",
         "express": "*",
         "request": "^2.87.0",
