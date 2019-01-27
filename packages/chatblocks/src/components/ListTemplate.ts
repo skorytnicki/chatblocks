@@ -10,8 +10,9 @@ export interface ListTemplateProps {
 }
 
 function ListTemplateComponent({children, sharable, topElementStyle, quickReplies}: ListTemplateProps) {
+    // todo-buttons
     const buttons = children.filter(isButton);
-    const elements = children.filter(isNotButton); // todo-buttons
+    const elements = children.filter(isNotButton);
     let data = <MessengerData>{
         message: {
             attachment: {

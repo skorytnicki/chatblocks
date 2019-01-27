@@ -24,7 +24,7 @@ export class Bot {
 
     async render({senderId, event}) {
         const reply = await this.component(event);
-        this.send(senderId, reply);
+        return this.send(senderId, reply);
     }
 }
 
