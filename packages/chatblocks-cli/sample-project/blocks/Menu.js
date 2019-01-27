@@ -1,10 +1,10 @@
 const Chatblocks = require("chatblocks");
-const {Block, ButtonTemplate, Text, Button, QuickReplies, QuickReply, ListTemplate} = Chatblocks;
+const {Block, Text, Button, QuickReply, ListTemplate} = Chatblocks;
 
-async function Menu() { // it has to be async. Blocks are promises.
+async function Menu() {
     return <Block>
         <Text>Are you hungry?</Text>
-        <ListTemplate.ListTemplate>
+        <ListTemplate.ListTemplate quickReplies={[<QuickReply payload="OTHER">Get started</QuickReply>]}>
             <ListTemplate.Element>
                 <ListTemplate.Image url="http://chatblocks.net/logo.png"/>
                 <ListTemplate.Title>Prestigious pizza</ListTemplate.Title>
@@ -29,9 +29,6 @@ async function Menu() { // it has to be async. Blocks are promises.
                 <ListTemplate.Subtitle>$99.99</ListTemplate.Subtitle>
                 <Button url="http://chatblocks.net">Order...</Button>
             </ListTemplate.Element>
-            <QuickReplies>
-                <QuickReply payload="OTHER">Get started</QuickReply>
-            </QuickReplies>
         </ListTemplate.ListTemplate>
     </Block>
 }
