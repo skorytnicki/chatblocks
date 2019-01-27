@@ -1,6 +1,6 @@
 # chatblocks
 
-![such chatblock](http://chatblocks.net/code.png)
+![such chatblock](http://chatblocks.net/code2.png)
 
 ## Idea
 
@@ -174,8 +174,7 @@ Description available in github Wiki.
  
 ### Chatblock component API
 
-Components are very simple. They are classes with asynchronous `render` method.
-Render function should return `Block` or single message.  
+Components are very simple. They are asynchronous functions. Function should return `Block`, array, or single message.
 
 ### How to pass the state?
 
