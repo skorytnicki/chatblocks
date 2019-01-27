@@ -79,6 +79,7 @@ export interface ButtonProps {
 
 export function Button({type, children, ...props}: ButtonProps) {
     const buttonType = type ? type : guessType(props);
+
     return {
         type: buttonType,
         ...getParams(buttonType, {
