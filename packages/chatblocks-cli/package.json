@@ -1,9 +1,9 @@
 {
   "name": "chatblocks-cli",
   "bin": {
-    "chatblocks" : "./index.js"
+    "chatblocks": "./index.js"
   },
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Chatbot generator as CLI for chatblocks framework",
   "main": "index.js",
   "author": "Szymon Korytnicki",
