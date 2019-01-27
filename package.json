@@ -1,47 +1,12 @@
 {
-  "name": "chatblocks",
-  "version": "1.0.7",
-  "description": "Declarative chatbots for Messenger",
-  "main": "index.js",
-  "author": "Szymon Korytnicki",
-  "license": "MIT",
-  "homepage": "http://chatblocks.net",
-  "keywords": [
-    "bot",
-    "chat",
-    "chatbot",
-    "chatbot facebook",
-    "chatbot framework",
-    "chatbot messenger",
-    "declarative",
-    "declarative ui",
-    "facebook",
-    "facebook bot",
-    "facebook messenger",
-    "facebook messenger bot",
-    "facebook messenger platform",
-    "javascript",
-    "jsx",
-    "messenger api",
-    "messenger platform",
-    "messenger",
-    "messenger api",
-    "messenger bot",
-    "messenger bot-boilerplate",
-    "messenger chatbot",
-    "messenger chatbots",
-    "messenger platform",
-    "react",
-    "reactjs",
-    "ui"
-  ],
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.4.0",
+    "tslint-config-prettier": "^1.15.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/skorytnicki/chatblocks.git"
-  },
-  "dependencies": {
-    "object.pick": "^1.3.0",
-    "request": "^2.87.0",
-    "request-promise": "^4.2.2"
   }
 }

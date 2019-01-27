@@ -1,0 +1,47 @@
+{
+  "name": "chatblocks",
+  "version": "2.0.0",
+  "description": "Declarative chatbots for Messenger",
+  "main": "build/index.js",
+  "author": "Szymon Korytnicki",
+  "license": "MIT",
+  "homepage": "http://chatblocks.net",
+  "scripts": {
+    "build": "tsc --sourceMap",
+    "watch": "tsc --watch --sourceMap"
+  },
+  "dependencies": {
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  },
+  "types": "./build/index.d.ts",
+  "keywords": [
+    "bot",
+    "chat",
+    "chatbot",
+    "chatbot facebook",
+    "chatbot framework",
+    "chatbot messenger",
+    "declarative",
+    "declarative ui",
+    "facebook",
+    "facebook bot",
+    "facebook messenger",
+    "facebook messenger bot",
+    "facebook messenger platform",
+    "javascript",
+    "jsx",
+    "messenger api",
+    "messenger platform",
+    "messenger",
+    "messenger api",
+    "messenger bot",
+    "messenger bot-boilerplate",
+    "messenger chatbot",
+    "messenger chatbots",
+    "messenger platform",
+    "react",
+    "reactjs",
+    "ui"
+  ]
+}

@@ -1,0 +1,7 @@
+node_modules
+.DS_Store
+.idea
+src
+tslint.json
+tsconfig.json
+src/*.js

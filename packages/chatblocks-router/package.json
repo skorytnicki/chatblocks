@@ -1,0 +1,43 @@
+{
+  "name": "chatblocks-router",
+  "version": "1.0.0",
+  "description": "Router components for chatblocks framework",
+  "main": "build/index.js",
+  "author": "Szymon Korytnicki",
+  "license": "MIT",
+  "homepage": "http://chatblocks.net",
+  "scripts": {
+    "build": "tsc --sourceMap",
+    "watch": "tsc --watch --sourceMap"
+  },
+  "types": "./build/index.d.ts",
+  "keywords": [
+    "bot",
+    "chat",
+    "chatbot",
+    "chatbot facebook",
+    "chatbot framework",
+    "chatbot messenger",
+    "declarative",
+    "declarative ui",
+    "facebook",
+    "facebook bot",
+    "facebook messenger",
+    "facebook messenger bot",
+    "facebook messenger platform",
+    "javascript",
+    "jsx",
+    "messenger api",
+    "messenger platform",
+    "messenger",
+    "messenger api",
+    "messenger bot",
+    "messenger bot-boilerplate",
+    "messenger chatbot",
+    "messenger chatbots",
+    "messenger platform",
+    "react",
+    "reactjs",
+    "ui"
+  ]
+}
