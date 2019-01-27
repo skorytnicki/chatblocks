@@ -3,7 +3,7 @@
   "bin": {
     "chatblocks": "./index.js"
   },
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Chatbot generator as CLI for chatblocks framework",
   "main": "index.js",
   "author": "Szymon Korytnicki",
