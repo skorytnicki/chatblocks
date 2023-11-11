@@ -1,7 +1,5 @@
 # chatblocks
 
-![such chatblock](http://chatblocks.net/code2.png)
-
 ## Idea
 
 Chatbots are just another type of user interface. Nothing more, nothing less.
