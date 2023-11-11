@@ -20,7 +20,7 @@ With our convenient React-style API, you can build your chatbots declaratively, 
  
 It means you can build chatbots nearly as fast as in Chatfuel, for a fraction of the price, but with all elasticity and possibilities of the custom chatbot. 
  
-© [Szymon Korytnicki](http://korytnicki.pl), [chatblocks.net](http://chatblocks.net)
+© [Szymon Korytnicki](http://korytnicki.pl)
 
 
 ## What's in this repo
